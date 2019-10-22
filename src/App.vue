@@ -12,7 +12,7 @@ export default {
   name: 'App',
   methods:{
     to_home: function(event) {
-      if (confirm('Going home!')) {
+      if (!confirm('Going home!')) {
         event.preventDefault();
       }
     }
