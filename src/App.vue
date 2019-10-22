@@ -19,13 +19,13 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Lato:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
 *{
   font-family: 'Lato';
 }
 html{
   background: -webkit-linear-gradient(rgba(109,58,180,0.5) 0%, rgba(253,29,29,0.5) 50%, rgba(252,176,69,0.5) 100%);      
-  height:110vh;
+  height:100vh;
 }
 body {
   height: 100vh;
@@ -58,7 +58,11 @@ a {
   font-size: 24px;
   width: 80%;
   height: 20%;
-  border: 1px solid #333333;
+  border-radius:40px;
+  border:none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: white;
+  font-weight: bold;
 }
 
 .submit-button {
