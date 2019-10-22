@@ -16,5 +16,8 @@
   justify-content: space-evenly;
   align-items: center;
 }
+.button{
+  font-weight: 400;    
+}
 </style>
 
