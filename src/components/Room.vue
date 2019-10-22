@@ -20,7 +20,7 @@
       <div class="center-box question-box" style="height:40%">
         {{ selectedQuestion }}
       </div>
-      <input type="text" class="center-box answer-text-field" placeholder="Type your answer"/>
+      <input type="text" class="center-box answer-text-field" placeholder="Type your answer" v-model="submittedAnswer"/>
       <div class="button submit-button" @click="questionAnswered()">Submit</div>
     </div>
     </transition>
@@ -53,6 +53,7 @@ export default {
   name: 'Room',
   data() {
     return {
+      submittedAnswer: '',
       questionIndex: 0,
       questions: [
         'If you were an animal, what animal would you be?',
@@ -145,6 +146,8 @@ export default {
       this.answerPhase = false;
       this.guessPhase = true;
       this.setData();
+      this.addData(this.submittedAnswer, 'User');
+      this.submittedAnswer = '';
     },
     checkPair() {
       var ans = this.selectedAnswer;
