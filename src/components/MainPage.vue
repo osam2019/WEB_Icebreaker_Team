@@ -5,10 +5,12 @@
   <div class="form" v-if="createClicked">
     <div>Your Room ID is ABC1234</div>
     <div>Your name: <input type="text"/></div>
+    <div class="button submit-button">Create!</div>
   </div>
   <div class="form" v-if="joinClicked">
     <div>Room ID: <input type="text"/></div>
     <div>Your name: <input type="text"/></div>
+    <div class="button submit-button">Join!</div>
   </div>
 </div>
 </template>

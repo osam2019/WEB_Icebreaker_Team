@@ -13,7 +13,7 @@ export default {
   methods:{
     to_home: function(event) {
       confirm('Going home!')
-    }  
+    }
   }
 }
 </script>
@@ -51,5 +51,11 @@ a {
   width: 80%;
   height: 20%;
   border: 1px solid #333333;
+}
+
+.submit-button {
+  width: 100px;
+  height: 25px;
+  font-size: 16px;
 }
 </style>
