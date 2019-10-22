@@ -1,13 +1,20 @@
 <template>
   <div id="app">
-    <router-link to="/" class="home">&#127968;</router-link>
+    <router-link to="/">
+      <button class="home-button" v-on:click="to_home"> &#127968; </button>
+    </router-link>
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods:{
+    to_home: function(event) {
+      confirm('Going home!')
+    }  
+  }
 }
 </script>
 
@@ -28,8 +35,8 @@ a {
   height: 100%;
 }
 
-.home {
-  font-size: 48px;
+.home-button {
+  font-size: 40px;
 }
 
 .content {

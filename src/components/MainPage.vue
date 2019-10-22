@@ -13,7 +13,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 </style>
