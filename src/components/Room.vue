@@ -4,11 +4,11 @@
     <div class="phase-container" v-if="selectPhase">
       <div class="title">Select</div>
       <div class="question-container">
-      <div class="arrow left-arrow" @click="decreaseIndex(0)">&#171;</div>
+      <div class="el-icon-d-arrow-left" @click="decreaseIndex(0)"></div>
       <div class="center-box question-box" style="height:100%">
         {{ selectedQuestion }}
       </div>
-      <div class="arrow right-arrow" @click="increaseIndex(0)">&#187;</div>
+      <div class="el-icon-d-arrow-right" @click="increaseIndex(0)"></div>
       </div>
       <div class="button submit-button" @click="questionSelected()">Select</div>
     </div>
@@ -29,14 +29,14 @@
       </div>
       <div class="matching-container">
         <div class="matching-controller">
-          <div class="arrow up-arrow" @click="increaseIndex(1)">&#171;</div>
+          <div class="el-icon-d-arrow-left up-arrow" @click="increaseIndex(1)"></div>
           <div class="center-box matching-select">{{ selectedAnswer }}</div>
-          <div class="arrow down-arrow" @click="decreaseIndex(1)">&#187;</div>
+          <div class="el-icon-d-arrow-right down-arrow" @click="decreaseIndex(1)"></div>
         </div>
         <div class="matching-controller">
-          <div class="arrow up-arrow" @click="increaseIndex(2)">&#171;</div>
+          <div class="el-icon-d-arrow-left up-arrow" @click="increaseIndex(2)"></div>
           <div class="center-box matching-select">{{ selectedUser }}</div>
-          <div class="arrow down-arrow" @click="decreaseIndex(2)">&#187;</div>
+          <div class="el-icon-d-arrow-right down-arrow" @click="decreaseIndex(2)"></div>
         </div>
       </div>
       <div class="button submit-button" @click="checkPair()">Correct?</div>
