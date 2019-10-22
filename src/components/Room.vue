@@ -4,13 +4,13 @@
     <div class="phase-container" v-if="selectPhase">
       <div class="title">Select</div>
       <div class="question-container">
-      <div class="arrow el-icon-d-arrow-left" @click="decreaseIndex(0)"></div>
+      <div class="arrow el-icon-arrow-left" @click="decreaseIndex(0)"></div>
       <transition name="fade" mode="out-in">
         <div class="center-box question-box" v-bind:key="selectedQuestion" style="height:100%">
            {{ selectedQuestion }} 
         </div>
       </transition>
-      <div class="arrow el-icon-d-arrow-right" @click="increaseIndex(0)"></div>
+      <div class="arrow el-icon-arrow-right" @click="increaseIndex(0)"></div>
       </div>
       <div class="button submit-button" @click="questionSelected()">Select</div>
     </div>
@@ -31,14 +31,14 @@
       </div>
       <div class="matching-container">
         <div class="matching-controller">
-          <div class="arrow el-icon-d-arrow-left up-arrow" @click="increaseIndex(1)"></div>
+          <div class="arrow el-icon-arrow-left up-arrow" @click="increaseIndex(1)"></div>
           <div class="center-box matching-select">{{ selectedAnswer }}</div>
-          <div class="arrow el-icon-d-arrow-right down-arrow" @click="decreaseIndex(1)"></div>
+          <div class="arrow el-icon-arrow-right down-arrow" @click="decreaseIndex(1)"></div>
         </div>
         <div class="matching-controller">
-          <div class="arrow el-icon-d-arrow-left up-arrow" @click="increaseIndex(2)"></div>
+          <div class="arrow el-icon-arrow-left up-arrow" @click="increaseIndex(2)"></div>
           <div class="center-box matching-select">{{ selectedUser }}</div>
-          <div class="arrow el-icon-d-arrow-right down-arrow" @click="decreaseIndex(2)"></div>
+          <div class="arrow el-icon-arrow-right down-arrow" @click="decreaseIndex(2)"></div>
         </div>
       </div>
       <div class="button submit-button" @click="checkPair()">Correct?</div>
@@ -148,10 +148,10 @@ export default {
 </script>
 
 <style scoped>
-  .title{
-    font-size: 50px;
-    font-weight: bold;
-  }
+.title{
+  font-size: 50px;
+  font-weight: bold;
+}
 .phase-container{
   display: flex;
   justify-content: space-evenly;
@@ -207,7 +207,9 @@ export default {
 
 .arrow {
   font-size: 36px;
-  margin: 10px;
+  color: #ffffff70;
+  margin: 5px;
+  
 }
 
 .up-arrow, .down-arrow {

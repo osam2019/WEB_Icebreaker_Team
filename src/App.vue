@@ -73,6 +73,7 @@ a {
 
 .home-button {
   font-size: 40px;
+  color: #fffffff0;
   position: absolute;
   left: 10px;
   top: 10px;
