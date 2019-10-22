@@ -65,6 +65,7 @@ a {
 }
 .center-box{
   width: 80%;
+  height: 20%;
   border-radius:40px;
   border:none;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
