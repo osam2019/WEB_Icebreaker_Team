@@ -62,8 +62,8 @@ export default {
       ],
       answerIndex: 0,
       userIndex: 0,
-      answers: ['fox', 'tiger', 'dragon', 'fly'],
-      users: ['Jake', 'John', 'Alice', 'Bob'],
+      answers: [],
+      users: [],
       guessPair: {
         fox: ['John'],
         tiger: ['Alice'],
@@ -103,6 +103,18 @@ export default {
     }
   },
   methods: {
+    setData() {
+      this.addData('Fox', 'John');
+      this.addData('Tiger', 'Alice');
+      this.addData('Dragon', 'Jake');
+      this.addData('Fly', 'Bob');
+    },
+    addData(ans, user) {
+      this.answers.push(ans);
+      this.users.push(user);
+      // Assume that all answers are unique
+      this.guessPair[ans] = [user];
+    },
     increaseIndex(type) {
       if (type === 0) {
         this.questionIndex = (this.questionIndex + 1) % this.questions.length;
@@ -132,6 +144,7 @@ export default {
     questionAnswered() {
       this.answerPhase = false;
       this.guessPhase = true;
+      this.setData();
     },
     checkPair() {
       var ans = this.selectedAnswer;
