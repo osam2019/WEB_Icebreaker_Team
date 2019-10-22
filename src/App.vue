@@ -25,10 +25,19 @@ export default {
 }
 html{
   background: -webkit-linear-gradient(rgba(109,58,180,0.5) 0%, rgba(253,29,29,0.5) 50%, rgba(252,176,69,0.5) 100%);      
-  height:110vh;
+  height:100vh;
 }
 body {
   height: 100vh;
+}
+* {
+  font-family: 'Lato';
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
 a {
@@ -39,16 +48,20 @@ a {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-top: 10px;
   height: 100%;
 }
 
 .home-button {
   font-size: 40px;
+  position: absolute;
 }
 
 .content {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .button {

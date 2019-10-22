@@ -5,12 +5,16 @@
   <div class="form" v-if="createClicked">
     <div>Your Room ID is ABC1234</div>
     <div>Your name: <input type="text"/></div>
-    <div class="button submit-button">Create!</div>
+    <router-link to="/room">
+      <div class="button submit-button">Create!</div>
+    </router-link>
   </div>
   <div class="form" v-if="joinClicked">
     <div>Room ID: <input type="text"/></div>
     <div>Your name: <input type="text"/></div>
-    <div class="button submit-button">Join!</div>
+    <router-link to="/room">
+      <div class="button submit-button">Join!</div>
+    </router-link>
   </div>
 </div>
 </template>
@@ -36,12 +40,6 @@ export default {
 </script>
 
 <style scoped>
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
 .button{
   border-radius:40px;
   border:none;
