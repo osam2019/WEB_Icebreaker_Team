@@ -89,11 +89,6 @@ export default {
 .center{
   align-self:center;      
 }
-.fade-enter-active{
-  transition: opacity 1s;
-}
-.fade-enter, .fade-leave-active {
-  opacity: 0;
-}
+
 </style>
 

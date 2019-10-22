@@ -1,5 +1,6 @@
 <template>
   <div class="content">
+    <transition name="fade" mode="out-in">
     <div class="phase-container" v-if="selectPhase">
       <div class="title">Select</div>
       <div class="question-container">
@@ -11,6 +12,8 @@
       </div>
       <div class="button submit-button" @click="questionSelected()">Select</div>
     </div>
+    </transition>
+    <transition name="fade" mode="out-in">
     <div class="phase-container" v-if="answerPhase">
       <div class="center-box question-box" style="height:40%">
         {{ selectedQuestion }}
@@ -18,7 +21,8 @@
       <input type="text" class="center-box answer-text-field" placeholder="Type your answer"/>
       <div class="button submit-button" @click="questionAnswered()">Submit</div>
     </div>
-    
+    </transition>
+    <transition name="fade" mode="out-in">
     <div class="phase-container" v-if="guessPhase">
       <div class="center-box question-box" style="height:40%">
         {{ selectedQuestion }}
@@ -37,6 +41,7 @@
       </div>
       <div class="button submit-button" @click="checkPair()">Correct?</div>
     </div>
+    </transition>
   </div>
 
 </template>

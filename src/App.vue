@@ -84,10 +84,15 @@ a {
   background-color: white;
   font-weight: bold;
 }
-
 .submit-button {
   width: 100px;
   height: 25px;
   font-size: 16px;
+}
+.fade-enter-active{
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0;
 }
 </style>
