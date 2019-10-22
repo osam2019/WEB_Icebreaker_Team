@@ -21,10 +21,14 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Lato:700&display=swap');
 *{
-  font-family: 'Lato'
+  font-family: 'Lato';
 }
-html, body {
-  height: 100%;
+html{
+  background: -webkit-linear-gradient(rgba(109,58,180,0.5) 0%, rgba(253,29,29,0.5) 50%, rgba(252,176,69,0.5) 100%);      
+  height:110vh;
+}
+body {
+  height: 100vh;
 }
 
 a {
