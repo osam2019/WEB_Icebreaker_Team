@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-link to="/">
-      <button class="home-button" v-on:click="to_home"> &#127968; </button>
+      <button class="home-button" v-on:click="to_home($event)"> &#127968; </button>
     </router-link>
     <router-view/>
   </div>
@@ -12,7 +12,9 @@ export default {
   name: 'App',
   methods:{
     to_home: function(event) {
-      confirm('Going home!')
+      if (confirm('Going home!')) {
+        event.preventDefault();
+      }
     }
   }
 }
@@ -69,6 +71,7 @@ a {
   border-radius:40px;
   border:none;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  min-height: 130px;
 }
 .button {
   display: flex;
