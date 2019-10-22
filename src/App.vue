@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-link to="/" class="home-button el-icon-s-home" @click.native="to_home($event)"></router-link>
+    <router-link to="/">
+      <div class="home-button el-icon-s-home" @click="to_home($event)"></div>
+    </router-link>
     <router-view/>
   </div>
 </template>
