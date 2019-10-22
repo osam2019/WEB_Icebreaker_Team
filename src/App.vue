@@ -107,7 +107,7 @@ a {
   font-size: 16px;
 }
 .fade-enter-active{
-  transition: opacity 1s;
+  transition: opacity 1.3s;
 }
 .fade-enter, .fade-leave-active {
   opacity: 0;

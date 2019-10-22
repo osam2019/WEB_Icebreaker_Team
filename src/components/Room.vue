@@ -5,9 +5,11 @@
       <div class="title">Select</div>
       <div class="question-container">
       <div class="arrow el-icon-d-arrow-left" @click="decreaseIndex(0)"></div>
-      <div class="center-box question-box" style="height:100%">
-        {{ selectedQuestion }}
-      </div>
+      <transition name="fade" mode="out-in">
+        <div class="center-box question-box" v-bind:key="selectedQuestion" style="height:100%">
+           {{ selectedQuestion }} 
+        </div>
+      </transition>
       <div class="arrow el-icon-d-arrow-right" @click="increaseIndex(0)"></div>
       </div>
       <div class="button submit-button" @click="questionSelected()">Select</div>
