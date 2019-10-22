@@ -7,7 +7,7 @@
   </div>
   <div class="center-box" style="width:80%; height:30%" v-bind:class="{button:!buttonClicked}" @click="bottomClick()">
     <transition name="fade">
-    <component v-bind:is ="bottom_box"></component>
+      <component v-bind:is ="bottom_box"></component>
     </transition>
   </div>
 </div>
@@ -33,11 +33,22 @@ export default {
       template: '<span>Join Room</span>'
     },
     'create_follow_box' : {
-      template: `<span class="form"><div>Your Room ID is <b>ABC1234</b></div>
+      template: `<span class="form"><div>Your Room ID is <b>{{makeid()}}</b></div>
           <div>Your name: <input type="text"/></div>
           <router-link to="/room">
             <div class="button submit-button">Create!</div>
-          </router-link></span>`
+          </router-link></span>`,
+      methods: {
+        makeid: function() {
+          var result = '';
+          var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+          var charactersLength = characters.length;
+          for ( var i = 0; i < 7; i++ ) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+          }
+          return result;
+        }
+      }
     },
     'join_follow_box' : {
       template:`<span class="form">
