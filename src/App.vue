@@ -45,7 +45,7 @@ a {
 
 .button {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   font-size: 24px;
   width: 80%;
