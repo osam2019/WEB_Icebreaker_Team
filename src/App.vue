@@ -20,11 +20,15 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Lato:700&display=swap');
-*{
-  font-family: 'Lato'
+
+* {
+  font-family: 'Lato';
+  box-sizing: border-box;
 }
+
 html, body {
   height: 100%;
+  margin: 0;
 }
 
 a {
@@ -35,16 +39,20 @@ a {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-top: 10px;
   height: 100%;
 }
 
 .home-button {
   font-size: 40px;
+  position: absolute;
 }
 
 .content {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .button {
