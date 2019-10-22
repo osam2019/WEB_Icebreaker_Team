@@ -1,11 +1,11 @@
 <template>
 <div class="content">
-  <div class="center-box button" @click="topClick()">
+  <div class="center-box button" style="width:80%; height:30%" @click="topClick()">
     <transition name="fade" mode="out-in">
       <component v-bind:is ="top_box"></component>
     </transition> 
   </div>
-  <div class="center-box" v-bind:class="{button:!buttonClicked}" @click="bottomClick()">
+  <div class="center-box" style="width:80%; height:30%" v-bind:class="{button:!buttonClicked}" @click="bottomClick()">
     <transition name="fade">
     <component v-bind:is ="bottom_box"></component>
     </transition>
