@@ -137,8 +137,29 @@ export default {
       var ans = this.selectedAnswer;
       var user = this.selectedUser;
 
-      if (this.guessPair[ans].indexOf(user) > -1) {
+      var idx = this.guessPair[ans].indexOf(user);
+
+      if (idx > -1) {
         this.correctGuess = true;
+        
+        // Assume that all answers are unique
+        this.users = this.users.slice(0, this.userIndex).concat(this.users.slice(this.userIndex+1, this.users.length));
+        this.answers = this.answers.slice(0, this.answerIndex).concat(this.answers.slice(this.answerIndex+1, this.answers.length));
+        delete this.guessPair[ans];
+
+        // If done, go to question select phase
+        if (this.answers.length == 0) {
+          confirm('Congratulations!');
+          this.guessPhase = false;
+          this.selectPhase = true;
+        }
+
+        if (this.userIndex >= this.users.length) {
+          this.userIndex = 0;
+        }
+        if (this.answerIndex >= this.answers.length) {
+          this.answerIndex = 0;
+        }
       } else {
         this.correctGuess = false;
       }
