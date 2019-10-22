@@ -26,9 +26,24 @@ export default {
   padding:0;
 }
 html{
-  background: -webkit-linear-gradient(rgba(109,58,180,0.5) 0%, rgba(253,29,29,0.5) 50%, rgba(252,176,69,0.5) 100%);      
+  background: linear-gradient(rgba(204,153,255,0.5) 0%, rgba(253,29,29,0.5) 25%, rgba(252,176,69,0.5) 50%, rgba(253,29,29,0.5) 75%,rgba(204,153,255,0.5) 100%);
+  background-repeat:repeat-y;
+  background-size: 300% 300%;
+  -webkit-animation: AnimationName 3000s ease infinite;
+  animation: AnimationName 3000s ease infinite;
   height:100vh;
 }
+@-webkit-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 10000%}
+    100%{background-position:50% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 10000%}
+    100%{background-position:50% 0%}
+}
+
 body {
   height: 100vh;
 }
