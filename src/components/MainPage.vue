@@ -43,5 +43,16 @@ export default {
 .button{
   font-weight: 400;    
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.form{
+  height: 20%;
+}
 </style>
 
