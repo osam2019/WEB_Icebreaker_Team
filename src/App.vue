@@ -22,6 +22,8 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
 *{
   font-family: 'Lato';
+  margin:0;
+  padding:0;
 }
 html{
   background: -webkit-linear-gradient(rgba(109,58,180,0.5) 0%, rgba(253,29,29,0.5) 50%, rgba(252,176,69,0.5) 100%);      
@@ -64,8 +66,6 @@ a {
   align-items: center;
 }
 .center-box{
-  width: 80%;
-  height: 20%;
   border-radius:40px;
   border:none;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -75,6 +75,7 @@ a {
   justify-content: center;
   align-items: center;
   font-size: 24px;
+  width:80%;
   height: 20%;
   background-color: white;
   font-weight: bold;

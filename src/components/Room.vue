@@ -1,37 +1,44 @@
 <template>
   <div class="content">
-    <div class="title">{{ title }}</div>
-    <div class="question-container">
-      <div class="arrow left-arrow" v-if="selectPhase" @click="decreaseIndex(0)">&#171;</div>
-      <div class="box question-box">
+    <div class="phase-container" v-if="selectPhase">
+      <div class="title">Select</div>
+      <div class="question-container">
+      <div class="arrow left-arrow" @click="decreaseIndex(0)">&#171;</div>
+      <div class="center-box question-box" style="height:100%">
         {{ selectedQuestion }}
       </div>
-      <div class="arrow right-arrow" v-if="selectPhase" @click="increaseIndex(0)">&#187;</div>
-    </div>
-    <div class="subcontent" v-if="selectPhase">
-      <div>Select a question!</div>
+      <div class="arrow right-arrow" @click="increaseIndex(0)">&#187;</div>
+      </div>
       <div class="button submit-button" @click="questionSelected()">Select</div>
     </div>
-    <div class="subcontent" v-if="answerPhase">
-     <input type="text" placeholder="Type your answer"/>
+    <div class="phase-container" v-if="answerPhase">
+      <div class="center-box question-box" style="height:40%">
+        {{ selectedQuestion }}
+      </div>
+      <input type="text" class="center-box answer-text-field" placeholder="Type your answer"/>
       <div class="button submit-button" @click="questionAnswered()">Submit</div>
     </div>
-    <div class="subcontent" v-if="guessPhase">
+    
+    <div class="phase-container" v-if="guessPhase">
+      <div class="center-box question-box" style="height:40%">
+        {{ selectedQuestion }}
+      </div>
       <div class="matching-container">
         <div class="matching-controller">
           <div class="arrow up-arrow" @click="increaseIndex(1)">&#171;</div>
-          <div class="box matching-answer">{{ selectedAnswer }}</div>
+          <div class="center-box matching-select">{{ selectedAnswer }}</div>
           <div class="arrow down-arrow" @click="decreaseIndex(1)">&#187;</div>
         </div>
         <div class="matching-controller">
           <div class="arrow up-arrow" @click="increaseIndex(2)">&#171;</div>
-          <div class="box matching-user">{{ selectedUser }}</div>
+          <div class="center-box matching-select">{{ selectedUser }}</div>
           <div class="arrow down-arrow" @click="decreaseIndex(2)">&#187;</div>
         </div>
       </div>
-      <div class="button submit-button" @click="checkPair()">correct?</div>
+      <div class="button submit-button" @click="checkPair()">Correct?</div>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -41,8 +48,8 @@ export default {
     return {
       questionIndex: 0,
       questions: [
-        'Question1 Question1 Question1 Question1 Question1 Question1',
-        'Question2',
+        'If you were an animal, what animal would you be?',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rutrum scelerisque justo et lobortis. Pellentesque sed erat iaculis?',
         'Question3',
         'Question4'
       ],
@@ -56,7 +63,7 @@ export default {
         dragon: ['Jake'],
         fly: ['Bob']
       },
-      selectPhase: true,
+      selectPhase: true, /*DEBUG*/
       answerPhase: false,
       guessPhase: false,
       correctGuess: null
@@ -84,7 +91,7 @@ export default {
           return '땡!';
         }
       } else {
-        return '';
+        return 'Choose';
       }
     }
   },
@@ -130,57 +137,81 @@ export default {
 </script>
 
 <style scoped>
-.box {
-  border: 1px solid #333333;
+  .title{
+    font-size: 50px;
+    font-weight: bold;
+  }
+.phase-container{
   display: flex;
-  justify-content: center;
-  align-items: center; 
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  width:100%;
+  height: 80%;
 }
-
 .question-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 90%;
-  height: 30%
+  width: 100%;
+  height: 30%;
 }
 
 .arrow {
   font-size: 60px;
+  margin: 0 0%;
 }
 
 .question-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
   width: 80%;
-  height: 90%;
-  padding: 10%;
-  margin: 5%;
-  text-align: center;
+  padding: 5%;
+  text-align: left;
+  line-height:1.5;
+  font-size: 16px;
+  font-weight:bold;
 }
 
-.subcontent {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
+.answer-text-field{
+  width: 80%;
+  height:30%;
+  background-color:rgba(255,255,255,0.5);
+  text-align: center;
+  color: rgba(0,0,0,0.8);
+  font-size: 32px;
+  
 }
 
 .matching-container {
   display: flex;
   justify-content: space-between;
+  height: 50%;
+  width:100%;
 }
 
 .matching-controller {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+  width:50%;
 }
 
 .up-arrow, .down-arrow {
   transform: rotate(90deg);
 }
 
-.matching-controller .box {
-  font-size: 24px;
+.matching-select{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  background-color: white;
+  font-size: 20px;
+  font-weight: bold;
   padding: 5px;
   text-align: center;
 }
