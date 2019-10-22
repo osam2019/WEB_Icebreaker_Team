@@ -1,12 +1,12 @@
 <template>
   <div class="content">
-    <div class="title">{{ title }}</div>
+    <div class="title" :class="{ incorrect: (correctGuess === false) }">{{ title }}</div>
     <div class="question-container">
-      <div class="arrow left-arrow" v-if="selectPhase" @click="decreaseIndex(0)">&#171;</div>
+      <div class="el-icon-d-arrow-left" v-if="selectPhase" @click="decreaseIndex(0)"></div>
       <div class="box question-box">
         {{ selectedQuestion }}
       </div>
-      <div class="arrow right-arrow" v-if="selectPhase" @click="increaseIndex(0)">&#187;</div>
+      <div class="el-icon-d-arrow-right" v-if="selectPhase" @click="increaseIndex(0)"></div>
     </div>
     <div class="subcontent" v-if="selectPhase">
       <div>Select a question!</div>
@@ -19,14 +19,14 @@
     <div class="subcontent" v-if="guessPhase">
       <div class="matching-container">
         <div class="matching-controller">
-          <div class="arrow up-arrow" @click="increaseIndex(1)">&#171;</div>
-          <div class="box matching-answer">{{ selectedAnswer }}</div>
-          <div class="arrow down-arrow" @click="decreaseIndex(1)">&#187;</div>
+          <div class="el-icon-d-arrow-left up-arrow" @click="increaseIndex(1)"></div>
+          <div class="box matching-answer" :class="{ correct: correctGuess, incorrect: (correctGuess === false) }">{{ selectedAnswer }}</div>
+          <div class="el-icon-d-arrow-right down-arrow" @click="decreaseIndex(1)"></div>
         </div>
         <div class="matching-controller">
-          <div class="arrow up-arrow" @click="increaseIndex(2)">&#171;</div>
-          <div class="box matching-user">{{ selectedUser }}</div>
-          <div class="arrow down-arrow" @click="decreaseIndex(2)">&#187;</div>
+          <div class="el-icon-d-arrow-left up-arrow" @click="increaseIndex(2)"></div>
+          <div class="box matching-user" :class="{ correct: correctGuess, incorrect: (correctGuess === false) }">{{ selectedUser }}</div>
+          <div class="el-icon-d-arrow-right down-arrow" @click="decreaseIndex(2)"></div>
         </div>
       </div>
       <div class="button submit-button" @click="checkPair()">correct?</div>
@@ -94,8 +94,10 @@ export default {
         this.questionIndex = (this.questionIndex + 1) % this.questions.length;
       } else if (type === 1) {
         this.answerIndex = (this.answerIndex + 1) % this.answers.length;
+        this.correctGuess = null;
       } else if (type === 2) {
         this.userIndex = (this.userIndex + 1) % this.users.length;
+        this.correctGuess = null;
       }
     },
     decreaseIndex(type) {
@@ -103,8 +105,10 @@ export default {
         this.questionIndex = this.questionIndex > 0 ? this.questionIndex - 1 : this.questions.length - 1;
       } else if (type === 1) {
         this.answerIndex = this.answerIndex > 0 ? this.answerIndex - 1 : this.answers.length - 1;
+        this.correctGuess = null;
       } else if (type === 2) {
         this.userIndex = this.userIndex > 0 ? this.userIndex - 1 : this.users.length - 1;
+        this.correctGuess = null;
       }
     },
     questionSelected() {
@@ -130,6 +134,14 @@ export default {
 </script>
 
 <style scoped>
+.title {
+  font-size: 24px;
+}
+
+.title.incorrect {
+  color: red;
+}
+
 .box {
   border: 1px solid #333333;
   display: flex;
@@ -143,10 +155,6 @@ export default {
   align-items: center;
   width: 90%;
   height: 30%
-}
-
-.arrow {
-  font-size: 60px;
 }
 
 .question-box {
@@ -183,6 +191,14 @@ export default {
   font-size: 24px;
   padding: 5px;
   text-align: center;
+}
+
+.matching-controller .box.incorrect {
+  background-color: red;
+}
+
+.matching-controller .box.correct {
+  background-color: darkturquoise;
 }
 </style>
 

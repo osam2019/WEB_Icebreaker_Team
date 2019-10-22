@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <router-link to="/">
-      <button class="home-button" v-on:click="to_home($event)"> &#127968; </button>
-    </router-link>
+    <router-link to="/" class="home-button el-icon-s-home" @click="to_home($event)"></router-link>
     <router-view/>
   </div>
 </template>
@@ -44,6 +42,7 @@ html, body {
 
 a {
   text-decoration: none;
+  color: initial;
 }
 
 #app {
@@ -56,6 +55,8 @@ a {
 .home-button {
   font-size: 40px;
   position: absolute;
+  left: 10px;
+  top: 10px;
 }
 
 .content {
