@@ -30,6 +30,15 @@ html{
 body {
   height: 100vh;
 }
+* {
+  font-family: 'Lato';
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
 a {
   text-decoration: none;
@@ -39,28 +48,33 @@ a {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-top: 10px;
   height: 100%;
 }
 
 .home-button {
   font-size: 40px;
+  position: absolute;
 }
 
 .content {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
-
+.center-box{
+  width: 80%;
+  border-radius:40px;
+  border:none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
-  width: 80%;
   height: 20%;
-  border-radius:40px;
-  border:none;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   background-color: white;
   font-weight: bold;
 }

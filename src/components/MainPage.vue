@@ -1,16 +1,20 @@
 <template>
 <div class="content">
-  <div class="button" v-if="!joinClicked" @click="hideJoin()">Create Room</div>
-  <div class="button" v-if="!createClicked" @click="hideCreate()">Join Room</div>
+  <div class="center-box button" v-if="!joinClicked" @click="hideJoin()">Create Room</div>
+  <div class="center-box button" v-if="!createClicked" @click="hideCreate()">Join Room</div>
   <div class="form" v-if="createClicked">
     <div>Your Room ID is ABC1234</div>
     <div>Your name: <input type="text"/></div>
-    <div class="button submit-button">Create!</div>
+    <router-link to="/room">
+      <div class="button submit-button">Create!</div>
+    </router-link>
   </div>
   <div class="form" v-if="joinClicked">
     <div>Room ID: <input type="text"/></div>
     <div>Your name: <input type="text"/></div>
-    <div class="button submit-button">Join!</div>
+    <router-link to="/room">
+      <div class="button submit-button">Join!</div>
+    </router-link>
   </div>
 </div>
 </template>
@@ -44,6 +48,7 @@ export default {
 }
 .form{
   height:20%;
+
 }
 </style>
 
