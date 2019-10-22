@@ -29,7 +29,7 @@
           <div class="arrow down-arrow" @click="decreaseIndex(2)">&#187;</div>
         </div>
       </div>
-      <div class="button submit-button">correct?</div>
+      <div class="button submit-button" @click="checkPair()">correct?</div>
     </div>
   </div>
 </template>
@@ -48,27 +48,18 @@ export default {
       ],
       answerIndex: 0,
       userIndex: 0,
-      answers: [
-        {
-          answer: 'fox',
-          user: 'John'
-        },
-        {
-          answer: 'tiger',
-          user: 'Jake'
-        },
-        {
-          answer: 'fly',
-          user: 'Alice'
-        },
-        {
-          answer: 'dragon',
-          user: 'Bob'
-        }
-      ],
+      answers: ['fox', 'tiger', 'dragon', 'fly'],
+      users: ['Jake', 'John', 'Alice', 'Bob'],
+      guessPair: {
+        fox: ['John'],
+        tiger: ['Alice'],
+        dragon: ['Jake'],
+        fly: ['Bob']
+      },
       selectPhase: true,
       answerPhase: false,
-      guessPhase: false
+      guessPhase: false,
+      correctGuess: null
     }
   },
   computed: {
@@ -76,16 +67,22 @@ export default {
       return this.questions[this.questionIndex];
     },
     selectedAnswer() {
-      return this.answers[this.answerIndex].answer;
+      return this.answers[this.answerIndex];
     },
     selectedUser() {
-      return this.answers[this.userIndex].user;
+      return this.users[this.userIndex];
     },
     title() {
       if (this.answerPhase) {
         return 'Question';
       } else if (this.guessPhase) {
-        return 'Guess!';
+        if (this.correctGuess === null) {
+          return 'Guess!';
+        } else if (this.correctGuess) {
+          return 'Correct!';
+        } else {
+          return '땡!';
+        }
       } else {
         return '';
       }
@@ -98,7 +95,7 @@ export default {
       } else if (type === 1) {
         this.answerIndex = (this.answerIndex + 1) % this.answers.length;
       } else if (type === 2) {
-        this.userIndex = (this.userIndex + 1) % this.answers.length;
+        this.userIndex = (this.userIndex + 1) % this.users.length;
       }
     },
     decreaseIndex(type) {
@@ -107,7 +104,7 @@ export default {
       } else if (type === 1) {
         this.answerIndex = this.answerIndex > 0 ? this.answerIndex - 1 : this.answers.length - 1;
       } else if (type === 2) {
-        this.userIndex = this.userIndex > 0 ? this.userIndex - 1 : this.answers.length - 1;
+        this.userIndex = this.userIndex > 0 ? this.userIndex - 1 : this.users.length - 1;
       }
     },
     questionSelected() {
@@ -117,6 +114,16 @@ export default {
     questionAnswered() {
       this.answerPhase = false;
       this.guessPhase = true;
+    },
+    checkPair() {
+      var ans = this.selectedAnswer;
+      var user = this.selectedUser;
+
+      if (this.guessPair[ans].indexOf(user) > -1) {
+        this.correctGuess = true;
+      } else {
+        this.correctGuess = false;
+      }
     }
   }
 }
