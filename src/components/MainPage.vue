@@ -1,7 +1,7 @@
 <template>
 <div class="content">
-  <div class="button" v-if="!joinClicked" @click="hideJoin()">Create Room</div>
-  <div class="button" v-if="!createClicked" @click="hideCreate()">Join Room</div>
+  <div class="center-box button" v-if="!joinClicked" @click="hideJoin()">Create Room</div>
+  <div class="center-box button" v-if="!createClicked" @click="hideCreate()">Join Room</div>
   <div class="form" v-if="createClicked">
     <div>Your Room ID is ABC1234</div>
     <div>Your name: <input type="text"/></div>
@@ -40,10 +40,6 @@ export default {
 </script>
 
 <style scoped>
-.button{
-  font-weight: 400;    
-}
-
 .content {
   display: flex;
   flex-direction: column;
@@ -52,7 +48,8 @@ export default {
 }
 
 .form{
-  height: 20%;
+  height:20%;
+
 }
 </style>
 
