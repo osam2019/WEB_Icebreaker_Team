@@ -1,4 +1,5 @@
 <template>
+<transition appear name = "fade" mode="out-in">
 <div class="content">
   <div class="center-box button" style="width:80%; height:30%" @click="topClick()">
     <transition name="fade" mode="out-in">
@@ -11,6 +12,7 @@
     </transition>
   </div>
 </div>
+</transition>
 </template>
 
 <script>

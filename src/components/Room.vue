@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <transition name="fade" mode="out-in">
+    <transition appear name="fade" mode="out-in">
     <div class="phase-container" v-if="selectPhase">
       <div class="title">Select</div>
       <div class="question-container">
