@@ -3,7 +3,7 @@
   <div class="center-box button" style="width:80%; height:30%" @click="topClick()">
     <transition name="fade" mode="out-in">
       <component v-bind:is ="top_box"></component>
-    </transition> 
+    </transition>
   </div>
   <div class="center-box" style="width:80%; height:30%" v-bind:class="{button:!buttonClicked}" @click="bottomClick()">
     <transition name="fade">
@@ -14,6 +14,16 @@
 </template>
 
 <script>
+function validateUsername(event, username) {
+  if (username.length < 1) {
+    confirm('Invalid username!');
+    event.preventDefault();
+    return false;
+  } else {
+    return true;
+  }
+}
+
 export default {
   name: 'MainPage',
   data() {
@@ -34,9 +44,9 @@ export default {
     },
     'create_follow_box' : {
       template: `<span class="form"><div>Your Room ID is <b>{{makeid()}}</b></div>
-          <div>Your name: <input type="text"/></div>
+          <div>Your name: <input type="text" id="create-user-input"/></div>
           <router-link to="/room">
-            <div class="button submit-button">Create!</div>
+            <div class="button submit-button" @click="setUsername($event)">Create!</div>
           </router-link></span>`,
       methods: {
         makeid: function() {
@@ -47,17 +57,30 @@ export default {
             result += characters.charAt(Math.floor(Math.random() * charactersLength));
           }
           return result;
+        },
+        setUsername: function(event) {
+          var user = document.getElementById('create-user-input').value;
+          if (validateUsername(event, user)) {
+            this.$store.commit('setUsername', user);
+          }
         }
       }
     },
     'join_follow_box' : {
       template:`<span class="form">
           <div>Room ID: <input type="text"/></div>
-          <div>Your name: <input type="text"/></div>
+          <div>Your name: <input type="text" id="join-user-input"/></div>
           <router-link to="/room">
-            <div class="button submit-button">Join!</div>
-          </router-link></span>
-        `
+            <div class="button submit-button" @click="setUsername($event)">Join!</div>
+          </router-link></span>`,
+      methods: {
+        setUsername: function(event) {
+          var user = document.getElementById('join-user-input').value;
+          if (validateUsername(event, user)) {
+            this.$store.commit('setUsername', user);
+          }
+        }
+      }
     }
   },
   methods: {
@@ -98,7 +121,7 @@ export default {
   align-items:center;
 }
 .center{
-  align-self:center;      
+  align-self:center;
 }
 
 </style>

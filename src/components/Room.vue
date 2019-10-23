@@ -146,7 +146,7 @@ export default {
       this.answerPhase = false;
       this.guessPhase = true;
       this.setData();
-      this.addData(this.submittedAnswer, 'User');
+      this.addData(this.submittedAnswer, this.$store.getters.getUsername);
       this.submittedAnswer = '';
     },
     checkPair() {
@@ -157,7 +157,7 @@ export default {
 
       if (idx > -1) {
         this.correctGuess = true;
-        
+
         // Assume that all answers are unique
         this.users = this.users.slice(0, this.userIndex).concat(this.users.slice(this.userIndex+1, this.users.length));
         this.answers = this.answers.slice(0, this.answerIndex).concat(this.answers.slice(this.answerIndex+1, this.answers.length));
