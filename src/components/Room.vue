@@ -108,21 +108,6 @@ export default {
     selectedUser() {
       return this.users[this.userIndex];
     },
-    title() {
-      if (this.answerPhase) {
-        return 'Question';
-      } else if (this.guessPhase) {
-        if (this.correctGuess === null) {
-          return 'Guess!';
-        } else if (this.correctGuess) {
-          return 'Correct!';
-        } else {
-          return '땡!';
-        }
-      } else {
-        return 'Choose';
-      }
-    },
     answerCSSColor: function(){
       return new Color({
         red: this.answerColor.red,
