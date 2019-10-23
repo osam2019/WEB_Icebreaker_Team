@@ -45,7 +45,7 @@ export default {
       template: '<span>Join Room</span>'
     },
     'create_follow_box' : {
-      template: `<span class="form"><div><span class="descriptive-text"> Your Room ID is </span><b>{{makeid()}}</b></div>
+      template: `<span class="form"><div><span class="descriptive-text"> Your Room ID is <b>{{makeid()}}</b></span></div>
       <div><span class="descriptive-text">Your name: </span><input type="text" id="create-user-input" class="line-input"/></div>
           <router-link to="/wait">
             <div class="button submit-button" @click="setUsername($event)">Create!</div>

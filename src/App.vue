@@ -95,29 +95,33 @@ a {
   word-break: break-word;
 }
 .descriptive-text{
-  color: #000000a0;
+  font-size: 5vw;
+  color: #111111;
 }
 .line-input{
+  height: 5vw;
+  width: 25vw;
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+  vertical-align: 0.5vw;
 }
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 6vw;
   width:80%;
   height: 20%;
   background-color: white;
   font-weight: bold;
 }
 .submit-button {
-  width: 100px;
-  height: 25px; 
+  width: 20vw;
+  height: 5vh; 
   border-radius:10px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   color: #000000a0;
-  font-size: 16px;
+  font-size: 4vw;
 }
 .fade-enter-active{
   transition: opacity 1.3s;
