@@ -256,7 +256,7 @@ export default {
   padding: 5%;
   text-align: left;
   line-height:1.5;
-  font-size: 16px;
+  font-size: 4.2vw;
   font-weight:bold;
 }
 
@@ -302,7 +302,7 @@ export default {
   width: 80%;
   height: 100%;
   background-color: white;
-  font-size: 20px;
+  font-size: 4.5vw;
   font-weight: bold;
   padding: 5px;
   text-align: center;
