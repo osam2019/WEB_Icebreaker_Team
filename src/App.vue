@@ -76,8 +76,8 @@ a {
   font-size: 40px;
   color: #fffffff0;
   position: absolute;
-  left: 10px;
-  top: 10px;
+  left: 3vw;
+  top: 3vw;
 }
 
 .content {
