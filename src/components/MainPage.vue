@@ -45,8 +45,8 @@ export default {
       template: '<span>Join Room</span>'
     },
     'create_follow_box' : {
-      template: `<span class="form"><div>Your Room ID is <b>{{makeid()}}</b></div>
-          <div>Your name: <input type="text" id="create-user-input"/></div>
+      template: `<span class="form"><div><span class="descriptive-text"> Your Room ID is </span><b>{{makeid()}}</b></div>
+      <div><span class="descriptive-text">Your name: </span><input type="text" id="create-user-input" class="line-input"/></div>
           <router-link to="/wait">
             <div class="button submit-button" @click="setUsername($event)">Create!</div>
           </router-link></span>`,
@@ -70,8 +70,8 @@ export default {
     },
     'join_follow_box' : {
       template:`<span class="form">
-          <div>Room ID: <input type="text"/></div>
-          <div>Your name: <input type="text" id="join-user-input"/></div>
+      <div><span class="descriptive-text">Room ID: </span><input type="text" class="line-input"/></div>
+      <div><span class="descriptive-text">Your name:</span> <input type="text" id="join-user-input" class="line-input" /></div>
           <router-link to="/wait">
             <div class="button submit-button" @click="setUsername($event)">Join!</div>
           </router-link></span>`,
@@ -125,6 +125,5 @@ export default {
 .center{
   align-self:center;
 }
-
 </style>
 

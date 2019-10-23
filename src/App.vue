@@ -92,6 +92,13 @@ a {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   min-height: 130px;
 }
+.descriptive-text{
+  color: #000000a0;
+}
+.line-input{
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+}
 .button {
   display: flex;
   justify-content: center;
