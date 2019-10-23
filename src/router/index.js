@@ -7,6 +7,7 @@ import Wait from '@/components/Wait'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',

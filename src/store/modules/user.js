@@ -1,6 +1,8 @@
+import db from '../../api/db'
+
 // initial state
 var state = {
-  user: ''
+  user: '',
 };
 
 // getters
@@ -14,11 +16,14 @@ var getters = {
 var mutations = {
   setUsername(state, username) {
     state.user = username;
+  },
+  setData(state, data) {
+    state.data = data;
   }
 };
 
 export default {
   state,
   getters,
-  mutations
+  mutations,
 };

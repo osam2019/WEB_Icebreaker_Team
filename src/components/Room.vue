@@ -55,23 +55,13 @@ export default {
     return {
       submittedAnswer: '',
       questionIndex: 0,
-      questions: [
-        'If you were an animal, what animal would you be?',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rutrum scelerisque justo et lobortis. Pellentesque sed erat iaculis?',
-        'Question3',
-        'Question4'
-      ],
+      questions: [],
       answerIndex: 0,
       userIndex: 0,
       answers: [],
       users: [],
-      guessPair: {
-        fox: ['John'],
-        tiger: ['Alice'],
-        dragon: ['Jake'],
-        fly: ['Bob']
-      },
-      selectPhase: true, 
+      guessPair: {},
+      selectPhase: true,
       answerPhase: false,
       guessPhase: false,
       correctGuess: null,
@@ -103,6 +93,10 @@ export default {
       
       animate()
     }
+  },
+  mounted() {
+    this.$store.dispatch('loadQuestions');
+    this.loadQuestions();
   },
   computed: {
     selectedQuestion() {
@@ -139,11 +133,14 @@ export default {
     }
   },
   methods: {
-    setData() {
-      this.addData('Fox', 'John');
-      this.addData('Tiger', 'Alice');
-      this.addData('Dragon', 'Jake');
-      this.addData('Fly', 'Bob');
+    loadQuestions() {
+      this.questions = this.$store.getters.getQuestions;
+    },
+    loadData() {
+      this.$store.dispatch('loadRoomData');
+      this.answers = this.$store.getters.getAnswers;
+      this.users = this.$store.getters.getUsers;
+      this.guessPair = this.$store.getters.getPairs;
     },
     addData(ans, user) {
       this.answers.push(ans);
@@ -180,7 +177,7 @@ export default {
     questionAnswered() {
       this.answerPhase = false;
       this.guessPhase = true;
-      this.setData();
+      this.loadData();
       this.addData(this.submittedAnswer, this.$store.getters.getUsername);
       this.submittedAnswer = '';
     },
@@ -193,8 +190,8 @@ export default {
       if (idx > -1) {
         this.correctGuess = true;
         // Assume that all answers are unique
-        this.users = this.users.slice(0, this.userIndex).concat(this.users.slice(this.userIndex+1, this.users.length));
-        this.answers = this.answers.slice(0, this.answerIndex).concat(this.answers.slice(this.answerIndex+1, this.answers.length));
+        this.users.splice(this.userIndex, 1);
+        this.answers.splice(this.answerIndex, 1);
         delete this.guessPair[ans];
 
         // If done, go to question select phase

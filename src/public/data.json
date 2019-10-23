@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1, "answer": "Fox", "user": "John"
+  },
+  {
+    "id": 2, "answer": "Tiger", "user": "Alice"
+  },
+  {
+    "id": 3, "answer": "Snake", "user": "Bob"
+  },
+  {
+    "id": 4, "answer": "Turtle", "user": "Jake"
+  }
+]

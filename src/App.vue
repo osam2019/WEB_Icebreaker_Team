@@ -52,6 +52,7 @@ body {
 * {
   font-family: 'Lato';
   box-sizing: border-box;
+  user-select: none;
 }
 
 html, body {
@@ -91,6 +92,7 @@ a {
   border:none;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   min-height: 130px;
+  word-break: break-word;
 }
 .descriptive-text{
   color: #000000a0;
