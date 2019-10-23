@@ -80,6 +80,7 @@ export default {
           var user = document.getElementById('join-user-input').value;
           if (validateUsername(event, user)) {
             this.$store.commit('setUsername', user);
+            this.$store.dispatch('getRoomData');
           }
         }
       }
