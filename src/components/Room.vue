@@ -94,7 +94,7 @@ export default {
       animate()
     }
   },
-  mounted() {
+  beforeMount() {
     this.$store.dispatch('loadQuestions');
     this.loadQuestions();
   },
