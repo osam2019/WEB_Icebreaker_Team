@@ -27,6 +27,9 @@ var getters = {
 // mutations
 var mutations = {
   setData(state, data) {
+    state.answers = [];
+    state.users = [];
+    state.pair = {};
     for (var pair of data) {
       var ans = pair.answer;
       var user = pair.user;
@@ -37,6 +40,7 @@ var mutations = {
     }
   },
   setQuestions(state, questions) {
+    state.questions = [];
     for (var q of questions) {
       state.questions.push(q.question);
     }
