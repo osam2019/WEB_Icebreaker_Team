@@ -47,7 +47,7 @@ export default {
     'create_follow_box' : {
       template: `<span class="form"><div>Your Room ID is <b>{{makeid()}}</b></div>
           <div>Your name: <input type="text" id="create-user-input"/></div>
-          <router-link to="/room">
+          <router-link to="/wait">
             <div class="button submit-button" @click="setUsername($event)">Create!</div>
           </router-link></span>`,
       methods: {
@@ -72,7 +72,7 @@ export default {
       template:`<span class="form">
           <div>Room ID: <input type="text"/></div>
           <div>Your name: <input type="text" id="join-user-input"/></div>
-          <router-link to="/room">
+          <router-link to="/wait">
             <div class="button submit-button" @click="setUsername($event)">Join!</div>
           </router-link></span>`,
       methods: {

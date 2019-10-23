@@ -2,7 +2,7 @@
   <div class="content">
     <transition appear name="fade" mode="out-in">
     <div class="phase-container" v-if="selectPhase">
-      <div class="title">Select</div>
+      <div class="title">Choose a Question</div>
       <div class="question-container">
       <div class="arrow el-icon-arrow-left" @click="decreaseIndex(0)"></div>
       <transition name="fade" mode="out-in">
@@ -227,8 +227,9 @@ export default {
 
 <style scoped>
 .title{
-  font-size: 50px;
+  font-size: 9.5vw;
   font-weight: bold;
+  color: #222222;
 }
 .phase-container{
   display: flex;
