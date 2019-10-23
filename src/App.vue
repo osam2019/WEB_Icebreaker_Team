@@ -104,7 +104,10 @@ a {
 }
 .submit-button {
   width: 100px;
-  height: 25px;
+  height: 25px; 
+  border-radius:10px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  color: #000000a0;
   font-size: 16px;
 }
 .fade-enter-active{

@@ -2,7 +2,7 @@
   <div class="content">
     <transition appear name="fade" mode="out-in">
     <div class="phase-container" v-if="selectPhase">
-      <div class="title">Select</div>
+      <div class="title">Choose a Question</div>
       <div class="question-container">
       <div class="arrow el-icon-arrow-left" @click="decreaseIndex(0)"></div>
       <transition name="fade" mode="out-in">
@@ -32,12 +32,12 @@
       <div class="matching-container">
         <div class="matching-controller">
           <div class="arrow el-icon-arrow-left up-arrow" @click="increaseIndex(1)"></div>
-          <div class="center-box matching-select">{{ selectedAnswer }}</div>
+          <div class="center-box matching-select" v-bind:style="{ backgroundColor: answerCSSColor }">{{ selectedAnswer }}</div>
           <div class="arrow el-icon-arrow-right down-arrow" @click="decreaseIndex(1)"></div>
         </div>
         <div class="matching-controller">
           <div class="arrow el-icon-arrow-left up-arrow" @click="increaseIndex(2)"></div>
-          <div class="center-box matching-select">{{ selectedUser }}</div>
+          <div class="center-box matching-select" v-bind:style="{ backgroundColor: answerCSSColor }">{{ selectedUser }}</div>
           <div class="arrow el-icon-arrow-right down-arrow" @click="decreaseIndex(2)"></div>
         </div>
       </div>
@@ -47,8 +47,8 @@
   </div>
 
 </template>
-
 <script>
+var Color = net.brehaut.Color;
 export default {
   name: 'Room',
   data() {
@@ -61,10 +61,37 @@ export default {
       answers: [],
       users: [],
       guessPair: {},
-      selectPhase: true, /*DEBUG*/
+      selectPhase: true,
       answerPhase: false,
       guessPhase: false,
-      correctGuess: null
+      correctGuess: null,
+      tempColor:{
+        red: 0,
+        green: 0,
+        blue:0,
+        alpha:0
+      },  
+      answerColor: {
+        red: 1,
+        green: 1,
+        blue: 1,
+        alpha:1
+      }
+    }
+  },
+  watch: {
+    tempColor: function(){
+      function animate(){
+        if (TWEEN.update()){
+          requestAnimationFrame(animate)
+        }
+      }
+
+      new TWEEN.Tween(this.answerColor)
+        .to(this.tempColor, 200)
+        .start()
+      
+      animate()
     }
   },
   mounted() {
@@ -95,6 +122,14 @@ export default {
       } else {
         return 'Choose';
       }
+    },
+    answerCSSColor: function(){
+      return new Color({
+        red: this.answerColor.red,
+        blue: this.answerColor.blue,
+        green: this.answerColor.green,
+        alpha: this.answerColor.alpha,
+      }).toCSS()
     }
   },
   methods: {
@@ -154,7 +189,6 @@ export default {
 
       if (idx > -1) {
         this.correctGuess = true;
-
         // Assume that all answers are unique
         this.users.splice(this.userIndex, 1);
         this.answers.splice(this.answerIndex, 1);
@@ -165,7 +199,10 @@ export default {
           confirm('Congratulations!');
           this.guessPhase = false;
           this.selectPhase = true;
+        } else{
+          this.tempColor = new Color('#00ff78').toRGB();
         }
+
 
         if (this.userIndex >= this.users.length) {
           this.userIndex = 0;
@@ -175,7 +212,11 @@ export default {
         }
       } else {
         this.correctGuess = false;
+        this.tempColor = new Color('#e35151').toRGB();
       }
+      setTimeout(()=>{
+        this.tempColor = new Color('white').toRGB();
+      },200);
     }
   }
 }
@@ -183,8 +224,9 @@ export default {
 
 <style scoped>
 .title{
-  font-size: 50px;
+  font-size: 9.5vw;
   font-weight: bold;
+  color: #222222;
 }
 .phase-container{
   display: flex;
