@@ -68,7 +68,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ├── package.json        # build scripts and dependencies
 └── README.md
 ```
-For a detailed explanation on how things work, checkout the [guide]([https://vuejs-templates.github.io/webpack/](https://vuejs-templates.github.io/webpack/structure.html))
+For a detailed explanation on how things work, checkout the [guide](https://vuejs-templates.github.io/webpack/)
 
 ## License
 Distributed under the [MIT](http://opensource.org/licenses/MIT) License.
