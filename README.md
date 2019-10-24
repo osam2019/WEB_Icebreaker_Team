@@ -53,19 +53,19 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 7. Guess and match answers to players
 ## File Manifest
 ```
-├── build/				# webpack config files
-├── config/				# main project config
+├── build/              # webpack config files
+├── config/             # main project config
 ├── src/
-|	├── api/			# "fake" server api
-|	├── assets/
-|	├── components/		# vue components
-|	├── public/			# json files
-|	├── router/			# vue-router
-|	├── store/			# vuex modules
-|	├── App.vue			# main app component
-|	└── main.js			# app entry file
+|    ├── api/           # "fake" server api
+|    ├── assets/
+|    ├── components/    # vue components
+|    ├── public/        # json files
+|    ├── router/        # vue-router
+|    ├── store/         # vuex modules
+|    ├── App.vue        # main app component
+|    └── main.js        # app entry file
 ├── ...
-├── package.json		# build scripts and dependencies
+├── package.json        # build scripts and dependencies
 └── README.md
 ```
 For a detailed explanation on how things work, checkout the [guide]([https://vuejs-templates.github.io/webpack/](https://vuejs-templates.github.io/webpack/structure.html))
