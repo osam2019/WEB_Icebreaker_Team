@@ -41,7 +41,7 @@ npm run build --report
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 ### How To Play
-> Note: Although this web app is designed as multiplayer ice breaking game, only multiplaying feature is not supported now because there is no back-end server.
+> Note: Although this web app is designed as multiplaying game, multiplaying feature is not supported now because there is no back-end server.
 1. Access website `http://<dev-server-ip>:8080`
 	- Optimized to mobile device.
 3. Select 'Create/Join Room' menu
