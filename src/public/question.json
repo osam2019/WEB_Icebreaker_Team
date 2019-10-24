@@ -1,7 +1,9 @@
 [
-  { "id": 1, "question": "What is your major?" },
-  { "id": 2, "question": "If you were a rapper, what would your rapper name be?" },
-  { "id": 3, "question": "What makes you happy? (Maximum two words)" },
-  { "id": 4, "question": "What is your favorite song?"},
-  { "id": 5, "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rutrum scelerisque justo et lobortis. Pellentesque sed erat iaculis?" }
+  { "id": 1, "question": "What inscription do you want on your gravestone?"},
+  { "id": 2, "question": "What is your major?" },
+  { "id": 3, "question": "If you were a rapper, what would your rapper name be?" },
+  { "id": 4, "question": "What is your favorite word?" },
+  { "id": 5, "question": "What is your favorite song?"},
+  { "id": 6, "question": "Which movie or book do you think is ridiculously overrated?"},
+  { "id": 7, "question": "How much money are you willing to spend for the group?"}
 ]
