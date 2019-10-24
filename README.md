@@ -1,11 +1,18 @@
 # Icebreaker
-> 아이스 브레이커 친목 활동을 위한 모바일 웹앱
+> 아이스 브레이커 친목 활동을 위한 모바일 웹앱  
 > This readme is also available in [English](https://github.com/coolutony/icebreaker/blob/master/README.eng.md)
-### Built With
-- vue-cli
-- vue-router
-- vuex
-- element-ui (for icons)
+
+## 프로젝트 개요
+### 프로젝트명
+아이스 브레이커 (Icebreaker)
+
+### 팀명/개발자
+팀 아이스 브레이커
+- 상병 김선욱
+- 일병 김동성
+
+### 주요내용
+처음 만나 서로 서먹서먹한 모임에서 어색함을 없애고 친목을 다지기 위해 하는 활동을 아이스 브레이킹이라고 합니다. 이 때 주로 하는 활동 중 하나가 질문을 하나 제시하면 각자 그 질문에 대한 답변을 익명으로 제출한 뒤 서로 이야기를 나누며 누가 어떤 답을 썼는지 알아맞추는 활동입니다. 저희는 그러한 활동을 간편하게 즐길 수 있도록 모바일 웹 어플리케이션으로 개발하는 프로젝트를 기획하였습니다.
 
 ## Getting Started
 
@@ -25,6 +32,12 @@ cd icebreaker
 ```
 npm install
 ```
+
+### Built With
+- vue-cli
+- vue-router
+- vuex
+- element-ui (for icons)
 
 ## Usage
 ### 빌드 세팅
